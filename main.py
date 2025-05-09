@@ -116,7 +116,7 @@ def train_and_evaluate(pipeline, X_train, y_train, X_test, y_test, param_grid=No
     top_names = itemgetter(*top_indices)(feature_names)
     top_importances = importances[top_indices]
 
-    # Объединённый вывод без constrained_layout из-за багов с colorbar
+    # Объединённый вывод
     fig = plt.figure(figsize=(14, 10))
     spec = gridspec.GridSpec(ncols=2, nrows=2, figure=fig)
 
@@ -144,7 +144,7 @@ def train_and_evaluate(pipeline, X_train, y_train, X_test, y_test, param_grid=No
 
     return model
 
-# 8. Основной запуск
+# 8. Запуск
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Train ddG_sign classifier on SKEMPI data.")
     parser.add_argument("--data", type=str, default="skempi_v2.csv", help="Path to SKEMPI CSV")
